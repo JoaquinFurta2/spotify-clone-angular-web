@@ -1,59 +1,46 @@
-# SpotifyLite
+# SpotifyLite - Angular 19 web-app Music Player
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
 
-## Development server
+A lightweight music streaming web app built using **Angular 19**.  
+This project includes essential Spotify-like functionality with a clean and responsive interface.
 
-To start a local development server, run:
+## Live Demo 
+  [View live project on Netlify](https://spotify-litee.netlify.app)
 
-```bash
-ng serve
-```
+## Main Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Play / Pause / Next / Previous**
+- **Volume Control**
+- **Audio streaming** with real-time player state
+- **Resizable sidebars (asides)** — both left and right panels are draggable and adjustable
+- Custom directive to auto-scroll overflowing text
+- Skeleton loaders during async data fetch
+- ** Full Responsive Design**
+- Built with **Standalone Components** and **Angular Signals**
 
-## Code scaffolding
+## Tech Stack
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Angular 19**
+- **Angular Material** – for UI components like sliders, buttons, layouts
+- **Angular CDK** – for custom floating panels
+- **RxJS** – for reactive streams and data fetching
+- **Angular Signals** – for reactive state management 
+- **HTML5 `<audio>` API** – for native audio playback
+- **SCSS/CSS Modules**
+- **Netlify** – for deployment
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## What I Learned
 
-```bash
-ng generate --help
-```
+- How to use **Angular Signals** for fine-grained reactive UI updates
+- Managing native audio playback via services and event streams
+- Responsive layouts with: **Angular Material** components, container querys, custom properties with @property
+- Building overlays with **CDK Overlay** instead of third-party modals
+- Implementing resizable sidebars in a component-based structure
 
-## Building
+##  Disclaimer
 
-To build the project run:
+This project is for **educational purposes only** and is not affiliated with Spotify.
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
