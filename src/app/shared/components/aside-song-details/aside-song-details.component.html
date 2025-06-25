@@ -1,0 +1,65 @@
+
+@if (playerService.$currentSongData | async; as data) {
+    <article class="song-details">
+    <section class="song-details__header">
+        <button (click)="asideService.close('songAside')">
+            <svg data-encore-id="icon" role="img" aria-hidden="true" class="e-9890-icon e-9890-baseline e-9890-icon--auto-mirror" viewBox="0 0 16 16" style="--encore-icon-height: var(--encore-graphic-size-decorative-smaller); --encore-icon-width: var(--encore-graphic-size-decorative-smaller);"><path d="M10.97 5.47a.75.75 0 1 1 1.06 1.06L10.56 8l1.47 1.47a.75.75 0 1 1-1.06 1.06l-2-2a.75.75 0 0 1 0-1.06l2-2Z"></path><path d="M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1Zm.5 1.5H5v13H1.5v-13Zm13 13h-8v-13h8v13Z"></path></svg>
+            
+        </button>
+        <h3 class="underline">{{data.album}}</h3>
+    </section>
+
+    <section class="song-details__main-info">
+        <div class="skeleton-cont">
+            <div class="skeleton" [style.display]="!isLoading() ? 'none' : 'block'"></div>
+            <img class="main-info__img" priority (load)="isLoading.set(false)" [ngSrc]="data.image" width="250" height="250"> 
+        </div>
+        <div class="main-info__info">
+            <h2 class="underline">{{data.title}}</h2>
+            <h3 class="underline">{{data.artist}}</h3>
+            <button class="like__btn" >
+                <svg data-encore-id="icon" role="img" aria-hidden="true"  viewBox="0 0 24 24"><path d="M8.667 1.912a6.257 6.257 0 0 0-7.462 7.677c.24.906.683 1.747 1.295 2.457l7.955 9.482a2.015 2.015 0 0 0 3.09 0l7.956-9.482a6.188 6.188 0 0 0 1.382-5.234l-.49.097.49-.099a6.303 6.303 0 0 0-5.162-4.98h-.002a6.24 6.24 0 0 0-5.295 1.65.623.623 0 0 1-.848 0 6.257 6.257 0 0 0-2.91-1.568z"></path></svg>
+            </button>
+        </div>
+    </section>
+
+    <section class="song-details__about">
+        <div class="about__img">
+            <h3>About the Artist</h3>
+            <img ngSrc="media/images/songs/about_the_artist.jpg" fill alt="">
+        </div>
+        <div class="about__info">
+            <h3>{{data.artist}}</h3>
+            <p class="listeners">123,456,789 monthly listeners</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum laboriosam aliquam mollitia blanditiis nihil. Eligendi labore minim.</p>
+        </div>
+    </section>
+
+    <section class="song-details__credits">
+        <h3>Credits</h3>
+        <div class="credit__cont">
+             <div class="credit__row">
+            <h4>{{data.artist}}</h4>
+                <span>Main Artist</span>
+            </div>
+            <div class="credit__row">
+                <h4>Daniel Ismael Real</h4>
+                <span>Composer</span>
+            </div>
+            <div class="credit__row">
+                <h4>Jon Ng</h4>
+                <span>Producer</span>
+            </div>
+        </div>
+    </section>
+</article>
+
+
+@if (!breakpointService.isMobile()) {
+    <button class="song-details-opener" [class.hidden]="asideService.isOpen('songAside')" (click)="handleSongDetailsButton()">
+        <svg aria-hidden="true" data-encore-id="icon" viewBox="0 0 16 16"><path d="M.47 11.03a.75.75 0 0 0 1.06 0L8 4.56l6.47 6.47a.75.75 0 1 0 1.06-1.06L8 2.44.47 9.97a.75.75 0 0 0 0 1.06"/></svg>
+    </button>
+}
+
+
+}

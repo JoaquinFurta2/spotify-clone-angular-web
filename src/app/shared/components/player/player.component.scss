@@ -1,0 +1,413 @@
+@use 'abstracts/mixings' as mix;
+
+
+.player__preview {
+    cursor: pointer;
+    margin: 0 auto;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    padding: 0.5rem 0.6rem;
+    gap: 20px;
+    background-color: #1ed75f3f;
+    border-radius: 5px ;
+
+    border-bottom: 1px solid rgb(82, 81, 81);
+
+    .preview__img {
+        border-radius: 5px;
+    }
+
+    .preview__details {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .preview__details__info {
+        font-size: 13px;
+        color: white;
+        h3 {
+            font-size: 13px;
+        }
+    }
+
+    
+    .like__btn, .play__btn {
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+    .play__btn {
+        fill: white;
+    }
+
+}
+
+
+.player {  
+    
+    position: fixed;
+    z-index: 1000000000;
+    inset: 0;
+    background-color:rgb(122, 81, 81);
+    padding: 0.7rem;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    
+
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+
+    &__top {
+        width: 100%;
+        align-self: start;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: start;
+        padding: 0.7rem 0.7rem;
+
+        h3 {
+            justify-self: center; 
+            color: white; 
+            font-size: 13px;
+        }
+
+    }
+
+    &__info {
+        display: grid;
+        gap: 20px;
+        .player__img {
+            align-self: flex-end;
+            margin: 0 auto;
+            width: 95%;
+            max-width: 470px;
+            
+            border-radius: 5px;
+            ;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+            }
+        };
+        &__details {
+            align-self: flex-end;
+            display: grid;
+            gap: 3px;
+            width: 95%;
+            margin: 0 auto;
+            color: white;
+            position: relative;
+            h2 {
+                font-size:20px;
+            }
+            p {
+                font-size: 16px;
+                opacity: 0.8;
+                font-weight: 500
+            };
+
+            h2, p {
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline;
+
+                }
+            }
+
+            .like__btn {
+                svg {
+                    width: 24px;
+                    height: 24px;
+                }
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                
+            }
+        }
+    }
+
+    &__controls {
+        display: grid;
+        gap: 15px;
+        
+        .progress-bar {
+
+            position: relative;
+            width: 90%;
+            margin: 0 auto;
+           
+            &__slider {
+                width: 100%;
+            }
+
+            span {
+                color: white;
+                opacity: 0.6;
+                font-size: 13px;
+                position: absolute;
+                bottom: 0;
+            }
+            &__duration {
+                font-family: sans-serif;
+                
+                right: 0;
+            }
+            &__current-time { 
+                font-family: sans-serif;
+                
+                left: 5px;
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        .controls__buttons {
+            margin-bottom: 2rem;
+            svg {
+                width: 28px;
+                height: 28px;
+            }
+            .play__btn  {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 60px;
+                height: 60px;
+                border-radius: 100px;
+                background-color: white;
+
+                svg {
+                    fill: black;
+                    width: 24px;
+                    height: 24px;
+                }
+               
+            }
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+           
+        }
+    }
+
+    &__volume {
+        display: none;
+    }
+}
+
+.controls__buttons svg, .volume__btn svg, .close__btn svg  {
+    fill: white;
+    width: 24px;
+    height: 24px;
+}
+
+button {
+   padding: 0;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+       
+        scale: 1.1;
+        opacity: 1 !important;
+    }
+    &:active:not(.like__btn) {
+        scale: 0.9;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+.like__btn {
+    stroke: white;
+    fill: none;
+}
+
+.liked {
+    stroke: var(--col-highlight);
+    fill: var(--col-highlight);
+}
+
+
+.open { 
+    transform: translateY(0);
+}
+
+.skeleton {
+    @include mix.skeleton();
+}
+.skeleton-cont {
+    position: relative;
+}
+
+
+@media (min-width: 650px) {
+    .player__preview {
+        display: none;
+    }
+
+    .player {
+        padding-top: 1rem;
+        padding-bottom: 0;
+        background-color: black;
+        position: static;
+        transform: translateY(0);
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: none;
+        gap: 0;
+        align-items: center;
+
+        &__top {
+            display: none;
+        }
+
+        &__info {
+            align-self: flex-start;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 10px;
+            .player__img {
+                width: 56px;
+
+                &:hover .song-details-button {
+                    opacity: 1;
+                }
+            }
+            &__details {
+                padding-right: 2.5rem;
+                margin: 0;
+                width: max-content;
+                align-self: center;
+                h2 {
+                    font-size: 14px;
+                }
+                p {
+                    font-size: 12px;
+                    color: #b3b3b3; ;
+                }
+                .like__btn {
+                    svg {
+                        width: 14px;
+                        height: 14px;
+                    }
+                }
+            }
+
+            .song-details-button {
+                opacity: 0;
+                position: absolute;
+                top: 4px;
+                right: 4px;
+                background-color: var(--col-primary-lighten-12);
+                border-radius: 50px;
+                width: 28px;
+                height: 28px;
+                svg {
+                    fill: var(--col-secondary);
+                    width: 16px;
+                    height: 16px;
+                    }
+                &.rotate {
+                    rotate: 180deg;
+                }
+            }
+            
+            
+        }
+
+        &__volume {
+            justify-self: end;
+            padding-right: 0.5rem;
+            display: flex;
+            align-items: center;
+            align-self: flex-start;
+
+            svg {
+                margin-top: 3px;
+                width: 16px;
+                height: 16px;
+            }
+            .volume__btn {
+                position: relative;
+                z-index: 1000000;
+            }
+        } 
+
+        &__controls {
+           gap: 0;
+           display: flex;
+           flex-direction: column-reverse;
+
+           .progress-bar {
+                width: 80%;
+                display: grid;
+                grid-template-columns: auto 1fr auto;
+                align-items: center;
+                span {
+                    font-size: 12px;
+
+                    position: static
+                };
+                &__slider {
+                    margin: 0 auto;
+                    width: 95%;
+                    
+                }
+           }
+
+          .controls__buttons {
+            margin-bottom: -5px;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+           
+            svg {
+                width:16px;
+                height:16px;
+           }
+           .play__btn  {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 100px;
+            background-color: white;
+            svg {
+                fill: black;
+                width: 16px;
+                height: 16px;
+            }
+          }
+
+            .next__btn, .prev__btn {
+                opacity: 0.8;
+            }
+           
+            }
+        }
+            
+        
+    }
+}

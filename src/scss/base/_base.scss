@@ -1,0 +1,93 @@
+// FONTS
+
+@font-face {
+font-family: 'CircularStd';
+    src: local(),
+         url('/fonts/circularstd/circularstd-book-webfont.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CircularStd';
+    src: local(),
+         url('/fonts/circularstd/circularstd-medium-webfont.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CircularStd';
+    src: local(),
+         url('/fonts/circularstd/circularstd-bold-webfont.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {opacity: 1;}
+}
+
+
+// GLOBAL STYLES
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, h5, ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a, button {
+    font-family: inherit;
+    color: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.2rem;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+html {
+    font-family: var(--ff);
+    height: 100%;
+}
+
+body {
+    height: 100vh;
+    font-size: var(--fs-normal);
+    line-height: 1.4;
+
+    margin: 0;
+    padding: 0 0.5rem;
+    background: var(--col-primary);
+}
+
+@media (max-width:650px) {
+    body {
+        padding: 0;
+    }
+}

@@ -1,0 +1,186 @@
+@use '@angular/material' as mat;
+@use 'abstracts/mixings' as mix;
+
+
+.search-deskpot, .wrapper__bottom, .logo {
+    display: none;
+}
+
+nav {
+    background-color: var(--col-primary);
+    color: var(--col-secondary-rgba);
+    padding: 1rem 0.7rem ;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+}
+
+svg {
+   fill: var(--col-secondary-rgba);
+    @include mix.box(24px,32px)
+}
+
+.home svg {
+    fill: none;
+    stroke: var(--col-secondary-rgba);
+    stroke-width: 2px;
+}
+
+.with-text a {
+    display: grid;
+    place-items: center;
+}
+
+.under-text {
+    font-size: 0.7rem;
+    font-weight: 100;
+}
+
+.selected {
+    color: var(--col-secondary);
+    svg {
+        fill: var(--col-secondary);
+        stroke: none;    
+    }
+}
+
+@media (min-width:650px) {
+    .search-deskpot, .noti, .porfile, .logo {
+        display: block;
+    }
+    .library-mobile, .search-mobile, .under-text {
+        display :none;
+    }
+    label {width: 100%;}
+    .search-deskpot {
+        position: relative;
+        input {
+            outline: none;
+            position: relative;
+            border: 1px solid #1f1f1f;
+            background-color: #1f1f1f;
+            padding: 0.9rem 0;
+            padding-left: 3.5rem;
+            padding-right: 3rem;
+            width: clamp(300px, 50vw, 450px);
+    
+            border-radius: 500px;
+            font-size: 1rem;
+            color: #ffffff;
+            transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.2s linear;
+
+            &::placeholder {
+                color: hsla(0, 0%, 74%, 0.753);
+            }
+            &:focus + svg {
+                fill: white ;
+        
+            }
+            &:hover + svg {
+                fill: white ;
+        
+            }
+            &:hover {
+                background-color: #2c2c2c ;
+                border-color:#434242;
+        
+            }
+            &:focus {
+                outline: none;
+                background-color: #2c2c2c ;
+                box-shadow: -2px 0  white,
+                0 -2px  white,
+                0 2px  white,
+                2px 0 white;
+            }
+        }
+        
+        svg {
+            transition: fill 0.5s ease-in-out;
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+        }  
+    }
+   
+    nav {
+        position: static;
+        padding: 0.5rem 1rem ;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 1rem;
+    }
+    nav > div {
+        width: 100%;
+    }
+    .noti {
+        svg {
+            @include mix.flex-center;
+            width: 16px;
+            height: 17px;
+            transition: fill 0.3s ease-in-out, scale 0.2s ease-in-out;
+
+            &:hover {
+                fill: white;
+                scale: 1.1;
+            }
+        }
+        
+    }
+    .logo {
+        display: flex;
+        justify-content: start;
+        padding-left: 0.5rem;
+
+        svg {
+            fill :white;
+        width: 32px;
+        height: 32px;
+        }
+    }
+
+    .wrapper, .wrapper__bottom {
+        @include mix.flex-center(1rem)
+    }
+    
+    .wrapper__bottom {
+        justify-content: end;
+    }
+
+    .home {
+        display: block;
+        cursor:pointer;
+        background-color: #1f1f1f;
+        border-radius: 100%;
+        @include mix.box(3.1rem);
+        @include mix.flex-center();
+        transition: scale 150ms ease-in-out, background-color 150ms ease-in-out;
+
+        &:hover {
+            scale: 1.03;
+            background-color: #2c2c2c;
+        }
+        a {
+            width: 100%;
+            height:100%
+        }
+    }
+    
+    .porfile {
+        @include mix.box(50px);
+        @include mix.flex-center();
+        border-radius: 100%;
+        background-color: yellow;
+        color: black;
+        font-size: 1rem;
+        font-weight: 500;
+        border: 0.6rem solid #1f1f1f;
+        transition: scale 150ms ease-in-out, border-color 150ms ease-in-out;
+
+        &:hover {
+            scale: 1.03;
+            border-color: #2c2c2c;
+        }
+    }
+}

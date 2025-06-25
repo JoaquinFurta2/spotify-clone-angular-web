@@ -1,0 +1,192 @@
+@use 'abstracts/mixings' as mix;
+
+
+
+
+
+%svg {
+    @include mix.flex-center;
+    @include mix.box(var(--fs-normal));
+}
+.skeleton {
+    @include mix.skeleton()
+}
+.skeleton-cont {
+    position: relative;
+}
+
+
+.song-details {
+    width: 90%;
+    margin: 0 auto;
+    @include mix.grid-gap(15px);
+   
+    padding-bottom: 1rem;
+}
+
+.song-details__header {
+    padding: 1rem 0;
+    display: flex;
+    align-items:center;
+    gap: 10px;
+    svg {
+        @extend %svg;
+        rotate: 180deg;
+        fill: var(--col-secondary-rgba);
+        transition: fill 0.3s ease-in-out;
+        &:hover {
+             fill: var(--col-secondary);
+        }
+    }
+    h3 {
+        @include mix.underline;
+        font-size: var(--fs-normal);
+    }
+        
+}
+
+.song-details__main-info {
+    @include mix.grid-gap(15px);
+    img {
+        @include mix.box(100%);
+        justify-self: center;
+        border-radius: 10px;
+    }
+    .main-info__info {
+        position: relative;
+        @include mix.grid-gap(5px);
+        h2 {
+            @include mix.underline;
+        }
+        h3 {
+            @include mix.underline;
+            font-size: var(--fs-normal);
+            color: var(--col-secondary-darken-20);
+            font-weight: var(--fw-normal);
+            transition: all 0.3s;
+            &:hover {
+                color: var(--col-secondary);
+            }
+        }
+        
+        .like__btn {
+            padding: 0;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            translate: 0 -50%;
+            svg {
+                fill: var(--col-highlight);
+                @extend %svg;
+            }
+        }
+    }     
+}
+
+.song-details__about {
+    border-radius: 10px;
+    background-color: var(--col-primary-lighten-12) ;
+    display: grid;
+
+    .about__img {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        position: relative;
+        
+        h3 {
+            width: 100%;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.678), transparent);
+            font-size: var(--fs-normal);
+            padding: 1rem;
+            position: absolute;
+            z-index: 1000000;
+        }
+        img {
+            object-fit: cover;
+            @include mix.box(100%);
+            opacity: 0.8;
+            border-radius: 10px 10px 0px 0px;
+        }
+    }
+    .about__info {
+        padding: 1rem;
+        h3 {
+            font-size: var(--fs-normal);
+            font-weight: var(--fw-bold);
+            margin-bottom: 0.3rem;
+            @include mix.underline;
+        }
+        .listeners {
+            font-size: var(--fs-normal);
+            font-weight: var(--fs-normal);
+            color: var(--col-secondary-rgba);
+            padding-bottom: 1.5rem;
+        }
+        .description {
+                color: var(--col-secondary-rgba);
+                font-size: var(--fs-small);
+        }
+    }
+
+}  
+    
+.song-details__credits {
+    background-color: var(--col-primary-lighten-12);
+    padding: 1rem;
+    border-radius: 10px;
+
+    h3 {
+        font-size: var(--fs-normal);
+        padding: 0rem 0 1rem;
+    }
+    .credit__cont {
+       @include mix.grid-gap(20px)
+    }
+    .credit__row {
+        line-height: 1;
+        h4 {
+            font-size: calc(var(--fs-normal) - 1px);
+            font-weight: var(--fw-normal);
+        }
+        span {
+            display: block;
+            padding-top: 0.3rem;
+            font-size: var(--fs-small);
+            color: var(--col-secondary-rgba);
+        }
+    }
+}
+
+.song-details-opener {
+    position: fixed;
+    z-index: 100000000000;
+    bottom: 50%;
+    right: 34px;
+    background-color: var(--col-primary-lighten-12);
+    border-radius: 50px;
+    width: 36px;
+    height: 36px;
+    svg {
+        fill: var(--col-secondary-darken-20);
+        width: 16px;
+        height: 16px;
+        }
+    rotate: -90deg;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, scale 0.2s;
+    transform: translateY(0);
+
+    &.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(100%);
+    }
+    &:hover {
+        scale: 1.1;
+       
+      svg {
+         fill: var(--col-secondary);
+       }
+
+    }   
+}

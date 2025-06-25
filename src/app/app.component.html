@@ -1,0 +1,21 @@
+<div class="layout-cont">
+    <header>
+        <app-navbar />
+    </header>
+    <main>
+        @if (!breakpointService.isMobile()) {
+            <app-aside-nav class="aside-nav" [id]="'libAside'" [defaultWidth]="270" [onRight]="false" >
+                <app-library sidebar-content></app-library>
+            </app-aside-nav>
+        }
+            <app-main-container class="main-container"></app-main-container>
+
+            <app-aside-nav class="aside-nav" [id]="'songAside'" [defaultWidth]="310" [onRight]="true" [minW]="270" [maxW]="420"  [closeW]="0">
+                <app-aside-song-details sidebar-content></app-aside-song-details>
+            </app-aside-nav>    
+    </main>
+    <footer>
+        <app-player></app-player>
+    </footer>    
+</div>
+

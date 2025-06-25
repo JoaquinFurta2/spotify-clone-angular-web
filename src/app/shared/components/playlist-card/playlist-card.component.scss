@@ -1,0 +1,103 @@
+@use 'abstracts/mixings' as mix;
+
+
+.wrapper {
+    container: card;
+    container-type: inline-size;
+}
+.playlist-card {
+    @include mix.truncate(true);
+    cursor: pointer;
+    font-size: 1rem;
+    display: grid;
+
+    gap: 15px;
+    grid-template-rows: 1fr auto;
+    color: white;
+    border-radius: 10px;
+    padding: 1rem 1rem 1.5rem;
+    background-color: #71717a11;
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);
+    box-shadow: var(--tw-shadow);
+
+    &:hover {
+        background-color: #71717a41;
+    }
+    transition: background-color 0.3s ease;
+}
+
+.img__cont {
+  position: relative;  
+    
+}
+
+img {
+   height: 100%;
+   width: 100%;
+   border-radius:5px ;
+   object-fit: cover;
+}
+
+.play__btn {
+    position: absolute;
+    right: 7px;
+    bottom: 7px;
+    opacity: 0;
+    transform: translateY(50%);
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+
+.playlist-card:hover .play__btn {
+    transform: translate(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+.card__content {
+    overflow: hidden;
+    h4 {
+       @include mix.truncate;
+    }
+    p {
+         @include mix.truncate;
+        margin-top: 0.2rem;
+        font-size: 14px;
+        color: #b3b3b3;
+    }
+}
+
+
+
+@container card (max-width:134px) {
+    .playlist-card {
+    
+        padding: 0.5rem;
+    }
+
+     .play__btn {
+        scale: 0.6;
+        right: 0;
+        bottom:0
+    }
+    
+.card__content {
+    font-size: 0.7rem;
+    p {
+        font-size: 0.6rem;
+        color: #b3b3b3;
+    }
+}
+}
+
+.skeleton-cont {
+    position: relative !important;
+}
+.skeleton {
+    @include mix.skeleton();
+    z-index: 100000000px;
+}

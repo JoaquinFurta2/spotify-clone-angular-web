@@ -1,0 +1,10 @@
+<aside [class.on-right]="onRight()" >
+    <div [style.width.px]="currentWidth()"  class="content" >
+        <ng-content  select="[sidebar-content]"></ng-content>
+    </div>
+    <span class="resizer"
+    cdkDrag
+    (cdkDragMoved)="onDragMove($event)"
+    ></span>    
+</aside>
+

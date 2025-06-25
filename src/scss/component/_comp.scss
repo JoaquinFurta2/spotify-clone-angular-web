@@ -1,0 +1,34 @@
+@use '@angular/material' as mat;
+
+.dropdown {
+    @include mat.menu-overrides((
+        container-color:var(--col-primary-lighten-8),
+        item-label-text-color:var(--col-secondary) ,
+        item-hover-state-layer-color:var(--col-primary-lighten-12),
+    ));
+  }
+
+.slider {
+    @include mat.slider-overrides((
+        active-track-color: white,
+        handle-color: var(--col-highlight),
+        focus-handle-color:  var(--col-highlight),
+        focus-state-layer-color: #1db95423,
+        active-track-height: 2px,
+        inactive-track-height: 2px,
+        handle-height: 10px,
+        handle-width: 10px,
+    ));
+
+    & .mdc-slider__thumb-knob {
+        display: none;
+    }
+
+    &:is(:hover, :focus-within) .mdc-slider__track--active_fill {
+        border-color:var(--col-highlight)
+    } 
+    &:is(:hover, :focus-within) .mdc-slider__thumb-knob {
+        display: block;
+    }
+  }
+

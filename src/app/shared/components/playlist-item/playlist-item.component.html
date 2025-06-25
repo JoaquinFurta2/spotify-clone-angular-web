@@ -1,0 +1,8 @@
+
+    <div class="playlist-item__card" (mouseenter)="hService.currentHoverColor.set(cardData().color)">
+        <img ngSrc="{{cardData().icon}}" height="70" width="70" alt="">
+        <h4>{{cardData().title}}</h4>
+        <app-play-button class="play__btn" [cardData]="cardData()"></app-play-button>
+    </div>
+
+

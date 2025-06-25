@@ -1,0 +1,17 @@
+@use 'abstracts/mixings' as mix;
+
+:host {
+    position: relative;
+    display: block;
+    overflow-y: scroll;
+    @include mix.box(100%);
+}
+
+
+
+@media (min-width:650px) {
+    :host {
+        background-color: var(--col-primary-lighten-5);
+        @include mix.scrollbar;
+    }  
+}

@@ -1,0 +1,56 @@
+
+@if (this.playlist$ | async; as playlist) {
+    <div class="cont">
+    <article class="playlist">
+        <section class="playlist__header">
+            <img class="header__img" ngSrc="{{playlist.image}}" height="210" width="210" alt="">
+            <div class="header__details">
+                <h1>{{playlist.title}}</h1>
+                <p>{{playlist.createdBy}}</p>
+                <p class="stats"><b>58 likes</b>, 83 songs, <span> about 3h 15min</span></p>
+            </div>
+        </section>
+        <section class="playlist__content">
+            <div class="playlist__controls">
+                <app-play-button class="play__btn" [cardData]="playlist"></app-play-button>
+                <button class="like__btn">
+                    <svg data-encore-id="icon" role="img" aria-hidden="true"  viewBox="0 0 24 24"><path d="M8.667 1.912a6.257 6.257 0 0 0-7.462 7.677c.24.906.683 1.747 1.295 2.457l7.955 9.482a2.015 2.015 0 0 0 3.09 0l7.956-9.482a6.188 6.188 0 0 0 1.382-5.234l-.49.097.49-.099a6.303 6.303 0 0 0-5.162-4.98h-.002a6.24 6.24 0 0 0-5.295 1.65.623.623 0 0 1-.848 0 6.257 6.257 0 0 0-2.91-1.568z"></path></svg>
+                </button>
+            </div>
+           
+            <div class="playlist-table">
+                <div class="row-header">
+                    <div class="hide">
+                        #
+                    </div>
+                    <div>Title</div>
+                    <div class="hide h-album">Album</div>
+                    <div class="h-duration">
+                        <svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0 1.5a5.5 5.5 0 1 0 0 11A5.5 5.5 0 0 0 8 2.5zm.75 2v4.25L11.5 10l-.75 1.23-3.25-2V4.5h1.25z"/></svg>
+                    </div>
+                </div>
+                
+                @for (elem of playlistSongs$ | async; track elem.id; let idx = $index) {
+                    <app-song-table [songCont]="elem" [playlist]="playlist" [songIndex]="idx"></app-song-table> 
+                } @empty {
+                    <div class="skeleton"></div>
+                    <div class="skeleton"></div>
+                    <div class="skeleton"></div>
+                    <div class="skeleton"></div>
+                    <div class="skeleton"></div>
+                    <div class="skeleton"></div>
+                    <div class="skeleton"></div>
+                    <div class="skeleton"></div>
+                }
+                
+                                
+            </div>
+        </section>
+    </article> 
+</div>
+
+<div class="bg-col-overlay" [style.--hover-col]="playlist.color.accent" [style.--hover-mid]="playlist.color.dark"></div>
+
+}
+
+

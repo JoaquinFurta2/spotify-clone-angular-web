@@ -1,0 +1,8 @@
+ @use 'scss/main.scss';
+
+ 
+
+main:has(.resizer:active) {
+
+    cursor: grabbing;
+ } 

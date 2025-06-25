@@ -1,0 +1,94 @@
+@use "abstracts/mixings" as mix;
+
+@keyframes showTooltip {
+  to {
+    opacity: 1;
+  }
+}
+
+.library {
+  position: relative;
+  color: var(--col-secondary);
+  container-type: inline-size;
+  container-name: lib;
+  display: flex;
+  flex-direction: column;
+}
+
+.library__nav {
+  background-color: var(--col-primary-lighten-5);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 1rem;
+
+  h3 {
+    font-size: var(--fs-normal);
+  }
+
+  .open-lib {
+    transition: all 0.3s ease;
+    @include mix.flex-center(10px);
+    position: relative;
+
+    svg {
+      transition: fill 0.3s ease;
+      fill: var(--col-secondary-rgba);
+      @include mix.box(var(--fs-normal));
+    }
+
+    &:hover {
+      color: var(--col-secondary-darken-20);
+    }
+    &:hover svg {
+      fill: var(--col-secondary-darken-20);
+    }
+  }
+}
+
+.decor {
+  opacity: 0;
+  color: var(--col-secondary-rgba);
+  font-size: var(--fs-small);
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: max-content;
+  background-color: var(--col-primary-lighten-8);
+  margin-bottom: 0.3rem;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.active {
+  opacity: 1;
+}
+
+@container lib (max-width: 100px) {
+  .library__nav {
+    margin-inline: auto;
+
+    .open-lib {
+      &:hover svg {
+        fill: var(--col-secondary);
+      }
+      svg {
+        @include mix.box(22px);
+        rotate: 180deg;
+      }
+    }
+    h3 {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .library__content {
+    padding-left: 0.8rem;
+  }
+  .library__nav {
+    background-color: inherit;
+    svg {
+      display: none;
+    }
+  }
+}

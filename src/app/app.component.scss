@@ -1,0 +1,51 @@
+ .layout-cont {
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+
+
+   main {
+    overflow: hidden;
+    grid-row: 1;  
+   }
+   
+   header {
+    grid-row: 3;
+   }
+
+    footer {
+    grid-row: 2;
+   }
+ }
+
+ 
+ 
+ @media (min-width:650px) {
+   .layout-cont {
+      grid-template-rows: auto 1fr  auto;
+
+      main, header, footer {
+         grid-row: auto; 
+      }
+    }
+    main {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+      
+      & > * {
+          border-radius: 5px;   
+      }
+     }
+    .aside-nav {
+        overflow: hidden;
+    }
+
+// Grabbing cursor when .resizer being dragedd
+    main:has(.resizer:active) {
+      cursor: grabbing;
+    } 
+ }
+
+

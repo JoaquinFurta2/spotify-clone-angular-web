@@ -1,0 +1,102 @@
+[
+    {
+      "id":"1",
+      "title": "Cities",
+      "artist": "Throttle",
+      "album": "Where you are",
+      "duration": "2:59",
+      "image": "media/images/songs/cities.jpg",
+      "icon": "media/images/songs/cities_ico.jpg",
+      "src": "media/music/Smoke-break-Dal-Studio.mp3"
+    },
+    {
+      "id":"2",
+      "title": "$treams",
+      "artist": "EDEN",
+      "album": "no future",
+      "duration": "3:20",
+      "image": "media/images/songs/$treams.jpg",
+      "icon": "media/images/songs/$treams_ico.jpg",
+      "src": "media/music/AVANT-BEATS-Chillhop.mp3"
+    },
+    {
+      "id":"3",
+      "title": "Stronger",
+      "artist": "Kanye West",
+      "album": "Graduation",
+      "duration": "5:12",
+      "image": "media/images/songs/stronger.jpg",
+      "icon": "media/images/songs/stronger_ico.jpg",
+      "src": "media/music/Always-Ever-Be-Cole-Powell.mp3"
+    },
+    {
+      "id":"4",
+      "title": "Concorde",
+      "artist": "Black Country,New Road",
+      "album": "Ants From Up There",
+      "duration": "6:03",
+      "image": "media/images/songs/concorde.jpg",
+      "icon": "media/images/songs/concorde_ico.jpg",
+      "src": "media/music/Desert-Gardens-Kosash.mp3"
+    },
+    {
+      "id":"5",
+      "title": "Shape of you",
+      "artist": "Ed Sheeran",
+      "album": "Divide",
+      "duration": "3:53",
+      "image": "media/images/songs/shape-of-you.jpg",
+      "icon": "media/images/songs/shape-of-you_ico.jpg",
+      "src": "media/music/Smoke-break-Dal-Studio.mp3"
+    },
+    {
+      "id":"6",
+      "title": "Smells Like Teen Spirit",
+      "artist": "Nirvana",
+      "album": "Nevermind",
+      "duration": "5:01",
+      "image": "media/images/songs/nirvana.jpg",
+      "icon": "media/images/songs/nirvana_ico.jpg",
+      "src": "media/music/Desert-Gardens-Kosash.mp3"
+    },
+    {
+      "id":"7",
+      "title": "Eleanor Rigby",
+      "artist": "The Beatles",
+      "album": "Yellow Submarine",
+      "duration": "2:05",
+      "image": "media/images/songs/eleanor-rigboy.jpg",
+      "icon": "media/images/songs/eleanor-rigboy_ico.jpg",
+      "src": "media/music/Smoke-break-Dal-Studio.mp3"
+    },
+    {
+      "id":"8",
+      "title": "SAOKO",
+      "artist": "ROSALÍA",
+      "album": "MOTOMAMI",
+      "duration": "2:17",
+      "image": "media/images/songs/saoko.jpg",
+      "icon": "media/images/songs/saoko_ico.jpg",
+      "src": "media/music/Always-Ever-Be-Cole-Powell.mp3"
+    },
+    {
+      "id":"9",
+      "title": "Instant Crush",
+      "artist": "Daft Punk",
+      "album": "Random Access Memories",
+      "duration": "5:37",
+      "image": "media/images/songs/instant-crush.jpg",
+      "icon": "media/images/songs/instant-crush_ico.jpg",
+      "src": "media/music/AVANT-BEATS-Chillhop.mp3"
+    }, 
+    {
+      "id":"10",
+      "title": "Invierno del 92",
+      "artist": "Cuarteto De Nos",
+      "album": "Raro",
+      "duration": "4:00",
+      "image": "media/images/songs/invierno.jpg",
+      "icon": "media/images/songs/invierno_ico.jpg",
+      "src": "media/music/Desert-Gardens-Kosash.mp3"
+    }
+]

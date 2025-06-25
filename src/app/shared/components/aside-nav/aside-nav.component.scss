@@ -1,0 +1,66 @@
+@use 'abstracts/mixings' as mix;
+
+aside {
+    position: relative;
+    height: 100%; 
+    display: grid;
+    grid-template-columns: 1fr auto;
+    border-radius: 10px;
+    overflow: hidden;   
+}
+
+aside.on-right {
+    grid-template-columns: auto 1fr;
+    .resizer {
+        grid-column: 1/2;
+        grid-row: 1; 
+    }
+    .content {
+        grid-column: 2/3;
+        grid-row: 1;
+    }
+}
+
+.content {
+    border-radius: 10px;
+    background-color: var(--col-primary-lighten-5);
+    color: var(--col-secondary);
+    overflow-y: auto;
+    @include mix.scrollbar(transparent);
+    &:hover {
+        @include mix.scrollbar();
+    }
+}
+
+
+
+.resizer {
+    position: relative;
+    cursor: col-resize;
+    display: block;
+    background-color: var(--col-primary);
+    height: 100%;
+    width: 10px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 98%;
+        transform: translate(-50%, -50%);
+        border: 2px solid white;
+        border-radius: 100px;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+    }
+    &:hover::after {
+        opacity: 0.6;
+    }
+    &:active:after {
+        opacity: 1; 
+    }
+    &:active {
+        cursor: grabbing;
+    }
+ }

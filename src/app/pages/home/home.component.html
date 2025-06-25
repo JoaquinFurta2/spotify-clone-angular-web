@@ -1,0 +1,25 @@
+<article class="home__article">
+    <section class="sect-1">
+        <h2>{{getGreeting()}}</h2>
+        <div class="playlist-item__cont">
+            @for (elem of playlist$ | async; track elem.id) {
+                <app-playlist-item (click)="navigate(elem.id)"  
+                (keydown.enter)="navigate(elem.id)" [cardData]="elem"></app-playlist-item>
+            }
+        </div>
+        
+    </section>
+    <section class="sect-2">
+        <h2>Made for you</h2>
+        <div class="playlist-card__cont">
+            @for (elem of playlist$ | async; track elem.id) {
+                <app-playlist-card (click)="navigate(elem.id)"  
+                (keydown.enter)="navigate(elem.id)" [cardData]="elem"></app-playlist-card>
+            }
+        </div>
+    </section>
+</article>
+
+<div class="bg-col-overlay" [style.--hover-col]="hService.currentHoverColor().accent" [style.--hover-mid]="hService.currentHoverColor().dark">
+
+</div>

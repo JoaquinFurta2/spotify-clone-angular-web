@@ -1,0 +1,34 @@
+@use 'sass:color';
+//VARIABLES
+
+$col-P:black;
+$col-S:white;
+$col-H:#1db954;
+ 
+$col-P-Light-5:color.scale($col-P, $lightness: 5%);
+$col-P-Light-12:color.scale($col-P, $lightness: 12%);
+$col-P-Light-8:color.scale($col-P, $lightness: 8%);
+$col-S-Dark-20:color.scale($col-S, $lightness: -20%);
+
+$col-S-rgba: rgba($col-S, 0.7);
+
+:root {
+    --ff: 'CircularStd', Helvetica, Arial, sans-serif;
+
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+
+    --fs-normal:1rem;
+    --fs-small:0.875rem;
+    --fs-big:1.5rem;
+
+    --col-primary: #{$col-P};
+    --col-secondary:#{$col-S};
+    --col-highlight:#{$col-H};
+    --col-primary-lighten-5:#{$col-P-Light-5};
+    --col-primary-lighten-12:#{$col-P-Light-12};
+    --col-primary-lighten-8:#{$col-P-Light-8};
+    --col-secondary-darken-20:#{$col-S-Dark-20};
+    --col-secondary-rgba: #{$col-S-rgba};
+}

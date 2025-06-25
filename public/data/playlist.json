@@ -1,0 +1,84 @@
+[
+  {
+    "id": "1",
+    "title": "Chill Vibes",
+    "description": "Relax and unwind with smooth, chill tracks.",
+    "image": "media/images/playlists/chill.jpg",
+    "icon": "media/images/playlists/chill_ico.jpg",
+    "createdBy": "Lo-Fi Station",
+    "songIds": ["1","2","3","4","5","6","7","8","9","10"],
+    "color": {"accent": "#da2735", "dark": "#7f1d1d"}
+  },
+  {
+    "id": "2",
+    "title": "DOPAMINE",
+    "description": "your daily dose of dopamine.",
+    "image": "media/images/playlists/dopamine.jpg",
+    "icon": "media/images/playlists/dopamine_ico.jpg",
+    "createdBy": "Spotify",
+    "songIds": ["2","1","4","3","5","6","7","8","9","10"],
+    "color": {"accent": "#21c872", "dark": "#14532d" }  
+  },
+  {
+    "id": "3",
+    "title": "Electronic for Life",
+    "description": "Timeless hits from the past.",
+    "image": "media/images/playlists/electronic.jpg",
+    "icon": "media/images/playlists/electronic_ico.jpg",
+    "createdBy": "By Kvh",
+    "songIds": ["3","5","1","4","2","6","7","8","9","10"],
+    "color": { "accent": "#f33b73", "dark": "#831843" }
+  },
+  {
+    "id": "4",
+    "title": "Indie Mix",
+    "description": "A fresh blend of indie rock, folk, and electronic.",
+    "image": "media/images/playlists/indie.jpg",
+    "icon": "media/images/playlists/indie_ico.jpg",
+    "createdBy": "Indie Pulse",
+    "songIds": ["4","2","6","1","5","3","7","8","9","10"],
+    "color": { "accent": "#555555", "dark": "#27272a" }
+  },
+  {
+    "id": "5",
+    "title": "Rap Caviar",
+    "description": "The best in hip-hop, updated daily.",
+    "image": "media/images/playlists/rap.webp",
+    "icon": "media/images/playlists/rap_ico.jpg",
+    "createdBy": "Rap Radar",
+   "songIds": ["1","2","3","4","5","6","7","8","9","10"],
+   "color": { "accent": "#cc5400", "dark": "#7c2d12" }
+  },
+  {
+    "id": "6",
+    "title": "80s Hits-Best of the 80s",
+    "description": "from New wave to pop to synth pop to rock.",
+    "image": "media/images/playlists/80s.webp",
+    "icon": "media/images/playlists/80s_ico.jpg",
+    "createdBy": "Crystal Musicsssssssssss sssssss  sssssssss ssssssss sssss ssssssss",
+    "songIds": ["1","2","3","4","5","6","7","8","9","10"],
+    "color": { "accent": "#394bd5", "dark": "#312e81" }
+  },
+  {
+    "id": "7",
+    "title": "Instrumental Reading",
+    "description": "Strings and pianos to accompany your latest great read.",
+    "image": "media/images/playlists/reading.jpg",
+    "icon": "media/images/playlists/reading_ico.jpg",
+    "createdBy": "Spotify",
+    "songIds": ["1","2","3","4","5","6","7","8","9","10"],
+    "color": { "accent": "#ffae00", "dark": "#78350f" }
+  },
+  {
+    "id": "8",
+    "title": "Pop Hits 2000s",
+    "description": "Old but gold, all the best throwback songs.",
+    "image": "media/images/playlists/pop.webp",
+    "icon": "media/images/playlists/pop_ico.jpg",
+    "createdBy": "maka_97",
+    "songIds": ["1","2","3","4","5","6","7","8","9","10"],
+    "color": { "accent": "#2ee9d7", "dark": "#134e4a" }
+  }
+]
+
+

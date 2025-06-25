@@ -1,0 +1,174 @@
+@use 'abstracts/mixings' as mix;
+
+.library__card-cont {
+    container-type: inline-size; 
+    container-name: lib-card;
+    overflow: visible;
+}
+
+.library__card {
+    @include mix.truncate(true);
+    position: relative;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 0.5rem 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+        background-color: var(--col-primary-lighten-12);
+        cursor: pointer;
+        .play__btn {
+            opacity: 1;
+        }
+        img {
+            opacity: 0.6;
+        }
+    }
+}
+
+
+.library__card__img-cont {
+    position: relative;
+    
+    .play__btn {
+        opacity: 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        transition: opacity 0.3s ease-in-out, ;
+        padding: 0.5rem;
+
+        svg {
+            @include mix.box(24px);
+            fill: var(--col-secondary);
+            transition: fill 0.3s ease-in-out;
+        }
+
+    }   
+    img {
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 5px;
+        min-width: 48px;
+    }
+
+    &:hover {
+        .play__btn svg {
+        fill: var(--col-highlight);
+        }   
+    }
+}
+    
+
+.library__card__info {
+      user-select: none;
+    width: 100%;
+    div {
+          overflow: hidden;
+    }
+    @include mix.grid-gap(3px);
+    grid-template-columns: 1fr auto;
+
+    font-size: var(--fs-small);
+    h4 {
+        @include mix.truncate;
+        font-size: var(--fs-normal);
+        font-weight: var(--fw-normal);
+    }
+    p {
+        @include mix.truncate;
+        color: #b3b3b3;
+    }
+  
+    
+} 
+
+.playing-decor {
+    align-self: center;
+    justify-self: end;
+    margin-right: 4px;
+    display: none;
+    fill: var(--col-highlight);
+    @include mix.box(16px)
+}
+
+
+.library__card.is-playing .playing-decor {
+    display: block;
+}
+
+.library__card.active .library__card__info  {
+
+    h4 {
+        color: var(--col-highlight);
+
+    }
+}
+
+
+
+//CDK OVERLAY STYLES
+.hover__info {
+  
+    overflow: hidden;
+    @include mix.flex-center(15px);
+    margin-left: 1rem;
+    color: var(--col-secondary);
+    width: max-content;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: var(--col-primary-lighten-8);
+
+    div {
+        @include mix.grid-gap(3px);
+        font-size: var(--fs-small);
+    }
+    h4 {
+        font-size: var(--fs-normal);
+        font-weight: var(--fw-medium);      
+    }
+    p {
+        color: #b3b3b3;
+        font-weight: var(--fw-normal);
+    }
+}
+
+.hover__play-decor {
+    display: none;   
+    fill: var(--col-highlight);
+    @include mix.box(16px)
+}  
+
+.hover__info.active {
+    h4 {
+        color: var(--col-highlight);
+    }
+}
+.hover__info.is-playing {
+    svg {
+        display: block;
+    }
+}
+
+
+@container lib-card (max-width: 100px) {
+    .library__card {
+        padding: 0.4rem;
+        justify-content: center;
+        position: static;
+    }
+    .library__card__info , .play__btn {
+      display: none;
+    }
+  }
+
+  @media (max-width: 890px) {
+    .library__card__info { 
+        font-size: calc(var(--fs-small) - 1px);
+        h4 {
+        font-size: var(--fs-small);
+        }
+    }
+  }

@@ -1,0 +1,19 @@
+
+        <div class="wrapper" #w>
+            <div class="playlist-card" #card (mouseenter)="hService.currentHoverColor.set(cardData().color)">
+                <div class="img__cont skeleton-cont">
+                    <div class="skeleton" [style.display]="!isLoading() ? 'none' : 'block'"></div>
+                    <img [ngSrc]="cardData().image" height="160" width="160"  (load)="isLoading.set(false)" alt="">
+                    <app-play-button class="play__btn" [cardData]="cardData()"></app-play-button>
+                </div>
+                <div appOverflowTranslate [triggerAni]="card" class="card__content">
+                    <h4 >{{cardData().title}}</h4>
+                    <p >{{cardData().createdBy}}</p>
+                </div>
+            </div>
+        </div>      
+
+   
+    
+ 
+ 

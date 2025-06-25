@@ -1,0 +1,41 @@
+
+@let isCurrentSong= this.playerService.getCurrentPlaylistId() === playlist().id && playerService.currentSongIndex() === songIndex();
+@let isPlaying = this.playerService.isPlaying();
+
+<div class="row"  (click)="handlePlay('click')" (dblclick)="handlePlay('dblclick')" (mouseenter)="isCardHover.set(true)" (mouseleave)="isCardHover.set(false)">
+    <div class="numb hide">
+
+        @if(isCardHover()) {
+            <button class="row-play__btn" (click)="onClickPlaySong()">
+                @if (isPlaying && isCurrentSong) {
+                    <svg data-encore-id="icon" role="img" aria-hidden="true"  viewBox="0 0 24 24"><path d="M5.7 3a.7.7 0 0 0-.7.7v16.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V3.7a.7.7 0 0 0-.7-.7H5.7zm10 0a.7.7 0 0 0-.7.7v16.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V3.7a.7.7 0 0 0-.7-.7h-2.6z"></path></svg>
+                } @else {
+                    <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" ><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>
+                }
+            </button>
+        } @else if (isCurrentSong && isPlaying) {
+            <app-fake-equalizer class="fake-equalizer"></app-fake-equalizer>   
+        } @else {
+            <span class="song__index" [class.active]="isCurrentSong">{{songIndex() + 1}}</span>
+        }
+        
+    </div>
+    <div class="song">
+        <img class="song__img" ngSrc="{{songCont().icon}}"  width="40" height="40" />
+        <div class="song__info">
+            <div class="title" [class.active]="isCurrentSong">{{songCont().title}}</div>
+            <div class="artist">{{songCont().artist}}</div>
+        </div>
+    </div>
+    <div class="album hide">
+        {{songCont().album}}
+    </div>
+    <div class="duration">
+        <button class="like__btn">
+            <svg data-encore-id="icon" role="img" aria-hidden="true"  viewBox="0 0 24 24"><path d="M8.667 1.912a6.257 6.257 0 0 0-7.462 7.677c.24.906.683 1.747 1.295 2.457l7.955 9.482a2.015 2.015 0 0 0 3.09 0l7.956-9.482a6.188 6.188 0 0 0 1.382-5.234l-.49.097.49-.099a6.303 6.303 0 0 0-5.162-4.98h-.002a6.24 6.24 0 0 0-5.295 1.65.623.623 0 0 1-.848 0 6.257 6.257 0 0 0-2.91-1.568z"></path></svg>
+        </button>
+        <span>
+            {{songCont().duration}}
+        </span>
+    </div>
+</div>

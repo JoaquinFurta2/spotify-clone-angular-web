@@ -1,0 +1,73 @@
+$scrollbar-color: #555;
+
+
+@mixin scrollbar($color: $scrollbar-color ) {
+    scrollbar-color: $color transparent; 
+    scrollbar-width: thin;  
+}
+
+@mixin box($w,$h:$w) {
+    width: $w;
+    height: $h;
+}
+
+@mixin flex-center($gap:0) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $gap;
+}
+
+@mixin grid-gap($gap:0) {
+    display: grid;
+    gap: $gap;
+}
+
+@mixin cont($name) {
+    container: $name;
+    container-type: inline-size;
+}
+
+@mixin truncate($ani:false) {
+  // this mixing is inteended to be used with the detect-overFlow directive.
+
+  @if $ani == false {
+    //this goes on the text.
+     //for this styles to apply correctly the parent needs to have overlflow hidden!!
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      transition:transform 0.2s ease-in-out ;
+  }
+  @else {
+    // this goes on the trigger element of the directive
+    &:hover .overflowing {
+      transition: transform var(--overflow-duration) linear;
+      transform: translateX(var(--overflow-translate, 20%));
+      overflow: visible;
+      text-overflow: clip;;
+  }
+  }
+}
+
+@mixin underline($color: var(--col-secondary), $height: 2px) {
+  cursor: pointer;
+  width: fit-content;
+  background-image: linear-gradient($color);
+  background-size: var(--size, 0) $height;
+  background-repeat: no-repeat;
+  background-position: left bottom 0.15em;
+  transition: background-size 0.3s ease-in-out;
+
+  &:hover {
+    --size: 100%;
+  }
+}
+
+@mixin skeleton {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  animation: pulse 1s infinite;
+  background: var(--col-primary-lighten-12);
+}

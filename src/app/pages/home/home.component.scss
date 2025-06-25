@@ -1,0 +1,107 @@
+@use 'abstracts/mixings' as mix;
+
+
+@property --hover-col {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --hover-mid {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+
+:host {
+    position: relative;
+    display: block;
+    @include mix.scrollbar;
+   
+    color: var(--col-secondary);
+}
+
+.home__article {
+     padding: 3rem 1rem 0.5rem 1.5rem;
+    @include mix.cont(item);
+    @include mix.grid-gap(30px);
+}
+
+.sect-1, .sect-2 {
+    @include mix.grid-gap(20px);
+}
+
+.sect-1 h2 {
+    position: relative;
+    z-index: 10;
+    font-size: calc(var(--fs-big) + 0.2rem);  
+}
+
+.playlist-item__cont {
+    position: relative;
+    z-index: 10;
+    @include mix.grid-gap(15px);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.playlist-card__cont {
+    @include mix.grid-gap(15px);   
+    grid-template-columns: repeat(auto-fit, minmax(50px, 192px));
+}
+
+.bg-col-overlay {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    opacity: 0.3;
+    width: 100%;
+    height: 25%;
+    transition: --hover-col 1s ease-in-out, --hover-mid 1s ease-in-out;
+    background: linear-gradient(to bottom, var(--hover-col) 10%, var(--hover-mid), rgba(13, 13, 13, 0.4) ); 
+}
+
+@container item (max-width:1250px) {
+    .playlist-item__cont {
+        grid-template-columns:  1fr 1fr 1fr ;
+} }
+
+@container item (max-width:750px) {
+    .playlist-item__cont {
+        grid-template-columns:  1fr 1fr  ;
+    }
+}
+
+@container item (max-width:1000px) {
+    .sect-1 h2 {
+        font-size: 1.4rem;  
+    }
+    .sect-2 h2 {
+        font-size: 1.2rem;  
+    }
+    .playlist-card__cont {
+   
+        gap: 10px;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(50px, 120px));
+    }       
+}
+
+@container item (max-width:330px) {
+    .playlist-item__cont {
+        gap:8px ; 
+    }
+        
+}
+
+@container item (max-width:250px) {
+    .playlist-item__cont {
+        grid-template-columns: 1fr;
+    }
+        
+}
+
+@media (max-width: 430px) {
+    .home__article {
+        padding: 1.5rem 0.5rem 0.5rem;
+    }   
+}
