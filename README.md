@@ -1,11 +1,11 @@
-# SpotifyLite - Angular 19 web-app Music Player
+# SpotifyLite - Angular 19 web-app Music Player 🎵
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
 
 A lightweight music streaming web app built using **Angular 19**.  
 This project includes essential Spotify-like functionality with a clean and responsive interface.
 
-## Live Demo 
+## 🔎 Live Demo 
   [View live project on Netlify](https://spotify-litee.netlify.app)
 
 ## Main Features
@@ -19,7 +19,25 @@ This project includes essential Spotify-like functionality with a clean and resp
 - ** Full Responsive Design**
 - Built with **Standalone Components** and **Angular Signals**
 
-## Tech Stack
+
+## 📸 Screenshots
+
+### Desktop View
+<div style="display: flex; flex-wrap: wrap;">
+  <img src="./public/screenshots/screenshot-desktop-1.jpg" alt="Homepage" width="500"/>
+</div>
+
+![App Demo](./public/screenshots/desktop-gif.gif)
+
+###  Mobile View
+<div style="display: flex; flex-wrap: wrap;">
+  <img src="./public/screenshots/screenshot-mobile-3.jpg" alt="Homepage" width="175"/>
+  <img src="./public/screenshots/screenshot-mobile-1.jpg" alt="Homepage" width="175" />
+  <img src="./public/screenshots/screenshot-mobile-2.jpg" alt="Homepage" width="175"/>
+   
+</div>
+
+## ⚒ Tech Stack
 
 - **Angular 19**
 - **Angular Material** – for UI components like sliders, buttons, layouts
